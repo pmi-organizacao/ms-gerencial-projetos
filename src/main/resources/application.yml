@@ -1,0 +1,48 @@
+
+spring:
+  application:
+    name: msgerencialprojeto
+  datasource:
+    url: jdbc:postgresql://gerencial-pmi-v3.cz4kuw26ocmq.us-east-1.rds.amazonaws.com:5432/postgres
+    username: postgres
+    password: admin0170
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+mq:
+  queues:
+    adicionar-colaborador: adicionar-colaborador
+    atualizar-colaborador: atualizar-colaborador
+
+
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: '*'
+
+endereco:
+  database: jdbc:postgresql://gerencial-pmi-v3.cz4kuw26ocmq.us-east-1.rds.amazonaws.com:5432/postgres
+  username: postgres
+  password: admin0170
+

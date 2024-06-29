@@ -9,6 +9,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 
 endereco:
@@ -27,6 +32,10 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+mq:
+  queues:
+    adicionar-colaborador: adicionar-colaborador
+    atualizar-colaborador: atualizar-colaborador
 
 management:
   endpoint:

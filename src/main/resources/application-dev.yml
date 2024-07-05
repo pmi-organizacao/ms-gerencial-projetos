@@ -2,24 +2,24 @@ spring:
   application:
     name: msgerencialprojeto
   datasource:
-    url: jdbc:postgresql://dpg-co45bun79t8c738uvgqg-a.oregon-postgres.render.com:5432/locadora_ncgd
-    username: locadora_ncgd_user
-    password: ivXnkbz179AsDEmgWNz7jE6exKJ73mMu
+    url: jdbc:postgresql://${URL_DATABASE}:${PORT_DATABASE}/postgres
+    username: ${USERNAME}
+    password: ${PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
   rabbitmq:
-    host: localhost
+    host: ${RABBIT_MQ}
     port: 5672
     username: guest
     password: guest
 
 
 endereco:
-  database: jdbc:postgresql://dpg-co45bun79t8c738uvgqg-a.oregon-postgres.render.com:5432/locadora_ncgd
-  username: locadora_ncgd_user
-  password: ivXnkbz179AsDEmgWNz7jE6exKJ73mMu
+  database: jdbc:postgresql://${URL_DATABASE}:${PORT_DATABASE}/postgres
+  username: ${USERNAME}
+  password: ${PASSWORD}
 
 
 server:
